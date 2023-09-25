@@ -20,6 +20,10 @@
 # Configuration
 wp-config.php
 
+# IDE & Env
+.DS_Store
+.idea/
+
 # Example themes
 /wp-content/themes/twenty*/
 
