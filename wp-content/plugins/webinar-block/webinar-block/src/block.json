@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "webinar-block/webinar-block",
+	"version": "0.1.0",
+	"title": "Webinar Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A block to manage webinars on a website.",
+	"attributes": {
+		"subtitle": {
+			"type": "string",
+			"default": ""
+		},
+		"startDate": {
+			"type": "string",
+			"default": ""
+		},
+		"endDate": {
+			"type": "string",
+			"default": ""
+		},
+		"duration": {
+			"type": "string",
+			"default": ""
+		},
+		"regFormUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"webinarUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"example": {
+		"attributes": {
+			"subtitle": "Sample Subtitle"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "webinar-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

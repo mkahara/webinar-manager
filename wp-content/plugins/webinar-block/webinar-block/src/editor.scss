@@ -1,0 +1,48 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-webinar-block {
+	border: 1px dotted #f00;
+	display: none;
+}
+.block-editor-block-list__block {
+	max-width: 1240px !important;
+	.subtitle {
+		padding-left: unset;
+	}
+	.row {
+		display: flex;
+		margin-bottom: 20px;
+		div {
+			flex: 1;
+		}
+	}
+	.row.gap-50 {
+		gap: 50px;
+	}
+	.label {
+		font-size: 11px;
+		font-weight: 500;
+		line-height: 1.4;
+		text-transform: uppercase;
+		display: inline-block;
+		margin-bottom: calc(8px);
+		padding: 0px;
+	}
+	input, .rich-text {
+		border: 1px solid #949494 !important;
+		border-radius: 2px !important;
+	}
+	.rich-text {
+		padding: 10px;
+		font-size: 13px;
+	}
+	.registration-form, .webinar-link {
+		input {
+			width: 100% !important;
+		}
+	}
+}

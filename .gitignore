@@ -23,6 +23,7 @@ wp-config.php
 # IDE & Env
 .DS_Store
 .idea/
+node_modules/
 
 # Example themes
 /wp-content/themes/twenty*/

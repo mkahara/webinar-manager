@@ -8,6 +8,44 @@
  */
 .wp-block-create-block-webinar-block {
   border: 1px dotted #f00;
+  display: none;
+}
+
+.block-editor-block-list__block {
+  max-width: 1240px !important;
+}
+.block-editor-block-list__block .subtitle {
+  padding-left: unset;
+}
+.block-editor-block-list__block .row {
+  display: flex;
+  margin-bottom: 20px;
+}
+.block-editor-block-list__block .row div {
+  flex: 1;
+}
+.block-editor-block-list__block .row.gap-50 {
+  gap: 50px;
+}
+.block-editor-block-list__block .label {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 0px;
+}
+.block-editor-block-list__block input, .block-editor-block-list__block .rich-text {
+  border: 1px solid #949494 !important;
+  border-radius: 2px !important;
+}
+.block-editor-block-list__block .rich-text {
+  padding: 10px;
+  font-size: 13px;
+}
+.block-editor-block-list__block .registration-form input, .block-editor-block-list__block .webinar-link input {
+  width: 100% !important;
 }
 
 /*# sourceMappingURL=index.css.map*/
