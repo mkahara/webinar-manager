@@ -176,5 +176,4 @@ function save_speakers_meta( $post_id ) {
 		delete_post_meta( $post_id, '_selected_speakers' );
 	}
 }
-
 add_action( 'save_post', 'save_speakers_meta' );

@@ -14,10 +14,23 @@ function enqueue_webinar_highlights_block_assets() {
 		'webinar-highlights-block-style',
 		plugins_url('dist/style.css', __FILE__),
 		array('wp-edit-blocks'),
-		filemtime(plugin_dir_path(__FILE__) . 'dist/style.css')
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/style.css' )
 	);
 }
 add_action('enqueue_block_assets', 'enqueue_webinar_highlights_block_assets');
+
+/**
+ * Enqueue the block editor assets
+ */
+function enqueue_webinar_highlights_block_assets_editor() {
+	wp_enqueue_style(
+		'webinar-highlights-block-style-editor',
+		plugins_url('dist/editorStyle.css', __FILE__),
+		array('wp-edit-blocks'),
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/editorStyle.css' )
+	);
+}
+add_action('enqueue_block_editor_assets', 'enqueue_webinar_highlights_block_assets_editor');
 
 
 /**

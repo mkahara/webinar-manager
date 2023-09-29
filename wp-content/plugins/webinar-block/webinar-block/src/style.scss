@@ -4,9 +4,167 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+body {
+	scroll-behavior: smooth;
+}
 
 .wp-block-create-block-webinar-block {
 	background-color: #21759b;
 	color: #fff;
 	padding: 2px;
+}
+
+.entry-content.wp-block-post-content div, .entry-content > * {
+	max-width: 1240px !important;
+	margin-inline: auto;
+}
+
+main .wp-block-template-part {
+	display: none;
+}
+
+footer.entry-footer.default-max-width {
+	display: none !important;
+}
+
+.no-widgets .site-footer {
+	margin-top: 50px !important;
+}
+
+.wp-custom-logo .site-header {
+	padding-bottom: 20px;
+	padding-top: 30px;
+	border-bottom: solid 1px #e3e3e3;
+}
+
+.site-footer > .site-info {
+	border-top: solid 1px #e3e3e3 !important;
+}
+.singular .entry-title {
+	font-size: 40px !important;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.primary-navigation .primary-menu-container > ul > .menu-item > a {
+	color: #21689d;
+}
+.entry-title .post-date {
+	background: #85c1ee;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.post-day {
+	color: #22689d;
+	font-weight: 600;
+}
+.post-month {
+	font-size: 16px;
+	color: #22689d;
+	font-weight: 400;
+}
+.post-date-group {
+	display: flex;
+	align-items: center;
+}
+.post-title {
+	margin-left: 25px;
+}
+.entry-title a {
+	font-size: 16px;
+	color: #22689d !important;
+	border: solid 2px;
+	padding: 10px 20px;
+	border-radius: 30px;
+}
+.entry-title a:hover {
+	color: #fff !important;
+	background: #22689d;
+	border-color: #22689d;
+}
+.entry-header p {
+	font-size: 20px;
+}
+.webinar-post-nav {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 0;
+	border-bottom: solid 1px #bebebe;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+.webinar-post-nav a {
+	text-decoration: none;
+	font-size: 15px;
+}
+.partial-underline {
+	position: relative;
+	color: #000;
+	font-size: 30px;
+	font-weight: 500;
+	margin-bottom: 35px;
+}
+h3.partial-underline::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 100px;
+	height: 2px;
+	background-color: #22689d;
+}
+.speakers-list {
+	display: flex;
+	gap: 50px;
+}
+.speaker {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+}
+.speaker img {
+	width: 200px;
+}
+.speaker h4 {
+	font-size: 16px;
+	margin: 10px 0;
+}
+.speaker p {
+	text-align: center;
+}
+.webinar-meta {
+	display: flex;
+	margin-top: 75px !important;
+}
+.meta-item {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+.meta-icon img {
+	width: 25px;
+}
+.meta-icon {
+	padding: 10px;
+	background: #85c1ee;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+.meta-title {
+	font-size: 14px;
+	line-height: normal;
+}
+.entry-header .post-thumbnail {
+	margin-top: -40px;
 }

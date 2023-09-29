@@ -13,7 +13,6 @@ const WebinarPromotionBlock = ({ attributes, setAttributes, webinars }) => {
         : [];
 
     const fetchWebinarDetails = () => {
-        console.log(ajaxurl);
         if (selectedWebinar) {
             jQuery.ajax({
                 url: 'http://localhost:8080/webinar-manager/wp-json/webinar-manager/v1/get_webinar_details/',

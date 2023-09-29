@@ -14,10 +14,23 @@ function enqueue_webinar_promotion_block_assets() {
 		'webinar-promotion-block-style',
 		plugins_url('dist/style.css', __FILE__),
 		array('wp-edit-blocks'),
-		filemtime(plugin_dir_path(__FILE__) . 'dist/style.css')
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/style.css' )
 	);
 }
 add_action('enqueue_block_assets', 'enqueue_webinar_promotion_block_assets');
+
+/**
+ * Enqueue the block editor assets
+ */
+function enqueue_webinar_promotion_block_assets_editor() {
+	wp_enqueue_style(
+		'webinar-promotion-block-style-editor',
+		plugins_url('dist/editorStyle.css', __FILE__),
+		array('wp-edit-blocks'),
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/editorStyle.css' )
+	);
+}
+add_action('enqueue_block_editor_assets', 'enqueue_webinar_promotion_block_assets_editor');
 
 /**
  * Register the Webinar Promotion Block
@@ -48,31 +61,44 @@ add_action('rest_api_init', function () {
 
 function render_webinar_promotion_block($request) {
 	$selectedWebinar = $request['selectedWebinar'];
-	//$book = prefix_get_the_book( $request['id'] );
 
+	$current_plugin_dir = dirname(plugin_basename(__FILE__));
+	$current_plugin_url = plugins_url('', $current_plugin_dir);
 	// Check if a webinar is selected
-	if (!empty($selectedWebinar)) {
-		// Retrieve webinar details (title, subtitle, dates, speakers) using $selectedWebinar
+	if (isset($selectedWebinar)) {
 		$webinar = get_post($selectedWebinar);
 
 		// Check if webinar data is available
 		if ($webinar) {
 			$webinar_title = $webinar->post_title;
-			// Assuming $webinar_subtitle, $webinar_start_date, $webinar_end_date are defined
+
+            $content = $webinar->post_content;
+			$blocks = parse_blocks($content);
+
+            foreach ($blocks as $block) {
+                if ($block['blockName'] == 'webinar-block/webinar-block') {
+	                $attributes = $block['attrs'];
+	                $subtitle = $attributes['subtitle'] ?? 'Not available';
+	                $startDate = $attributes['startDate'] ?? 'Not available';
+	                $endDate = $attributes['endDate'] ?? 'Not available';
+	                $duration = $attributes['duration'] ?? 'Not available';
+                }
+            }
 
 			// Render HTML output
 			ob_start();
 			?>
 			<div class="webinar-promotion-block">
 				<div class="promo-card-content">
+<!--                    <img src="--><?php //echo $current_plugin_url.'/webinar-promotion-block/dist/icon.jpeg' ?><!--" alt="Webinar">-->
 					<h2><?php echo esc_html($webinar_title); ?></h2>
-					<h3>This is subtitle</h3>
+					<h3><?php echo esc_html($subtitle); ?></h3>
 					<ul>
-						<li><strong>Begins at: </strong>12:00</li>
-						<li><strong>Ends at: </strong>13:00</li>
-						 <li><strong>Duration at: </strong>2 days</li>
+						<li><strong>Begins at: </strong><?php echo date("F j, Y g:i A", strtotime($startDate)); ?></li>
+						<li><strong>Ends at: </strong><?php echo date("F j, Y g:i A", strtotime($endDate)); ?></li>
+						 <li><strong>Duration: </strong><?php echo esc_html($duration); ?></li>
 					</ul>
-					<a href="">Register Now</a>
+					<a href=" <?php echo site_url().'/?p='.$selectedWebinar; ?>">Register Now</a>
 				</div>
 			</div>
 			<?php

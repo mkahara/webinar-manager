@@ -1,0 +1,17 @@
+.webinar-highlight-strip {
+    display: flex;
+}
+.webinar-highlight-strip .highlight-time {
+    padding-inline: unset;
+    background: unset;
+    flex: 0 0 20%;
+}
+.webinar-highlight-strip .highlight-title {
+    flex: 0 0 80%;
+}
+.webinar-highlight-strip .highlight-time, .webinar-highlight-strip .highlight-title {
+    /*flex: 1;*/
+}
+.webinar-highlight-strip input {
+    width: 100%;
+}

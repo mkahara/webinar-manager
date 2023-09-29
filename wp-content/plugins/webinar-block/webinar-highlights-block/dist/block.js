@@ -1,9 +1,8 @@
-//const { registerBlockType } = wp.blocks;
-
 wp.blocks.registerBlockType('webinar-highlight/webinar-highlight', {
     title: 'Webinar Highlight Block',
     description: 'This block adds webinar highlights with time and title.',
     category: 'common',
+    className: 'webinar-highlight-block',
     attributes: {
         highlight_time: {
             type: 'string',
@@ -29,21 +28,29 @@ wp.blocks.registerBlockType('webinar-highlight/webinar-highlight', {
         return [
             wp.element.createElement(
                 'div',
-                { key: 'time', className: 'highlight-time' },
-                wp.element.createElement('input', {
-                    type: 'text',
-                    value: highlight_time,
-                    onChange: (e) => onChangeHighlightTime(e.target.value),
-                })
-            ),
-            wp.element.createElement(
-                'div',
-                { key: 'title', className: 'highlight-title' },
-                wp.element.createElement('input', {
-                    type: 'text',
-                    value: highlight_title,
-                    onChange: (e) => onChangeHighlightTitle(e.target.value),
-                })
+                { key: 'wrapper', className: 'webinar-highlight-strip' },
+                [
+                    wp.element.createElement(
+                        'div',
+                        { key: 'time', className: 'highlight-time' },
+                        wp.element.createElement('input', {
+                            type: 'text',
+                            placeholder: 'Type highlight time',
+                            value: highlight_time,
+                            onChange: (e) => onChangeHighlightTime(e.target.value),
+                        })
+                    ),
+                    wp.element.createElement(
+                        'div',
+                        { key: 'title', className: 'highlight-title' },
+                        wp.element.createElement('input', {
+                            type: 'text',
+                            placeholder: 'Type highlight title',
+                            value: highlight_title,
+                            onChange: (e) => onChangeHighlightTitle(e.target.value),
+                        })
+                    )
+                ]
             )
         ];
     },

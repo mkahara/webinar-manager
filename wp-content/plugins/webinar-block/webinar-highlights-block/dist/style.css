@@ -1,0 +1,21 @@
+.webinar-highlights {
+    display: flex;
+    padding: 10px;
+    border-top: solid 1px;
+    border-color: #949494;
+    border-width: 1px;
+    border-bottom-style: solid;
+    border-left: double 10px #287ebf;
+    border-right: solid 1px #949494;
+    font-size: 16px;
+    margin: 25px auto !important;
+}
+
+.highlight-time {
+    padding-inline: 5px;
+    background: #85c1ee;
+}
+
+.highlight-title {
+    padding-left: 20px;
+}
