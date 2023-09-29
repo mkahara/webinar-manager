@@ -26,7 +26,6 @@ wp-config.php
 node_modules/
 
 # Example themes
-/wp-content/themes/twenty*/
 
 # Example plugin
 /wp-content/plugins/hello.php

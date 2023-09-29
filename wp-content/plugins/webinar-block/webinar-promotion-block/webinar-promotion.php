@@ -90,7 +90,6 @@ function render_webinar_promotion_block($request) {
 			?>
 			<div class="webinar-promotion-block">
 				<div class="promo-card-content">
-<!--                    <img src="--><?php //echo $current_plugin_url.'/webinar-promotion-block/dist/icon.jpeg' ?><!--" alt="Webinar">-->
 					<h2><?php echo esc_html($webinar_title); ?></h2>
 					<h3><?php echo esc_html($subtitle); ?></h3>
 					<ul>

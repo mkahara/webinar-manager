@@ -17,7 +17,7 @@ body {
   padding: 2px;
 }
 
-.entry-content.wp-block-post-content div, .entry-content > * {
+.entry-content.wp-block-post-content div, .single .entry-content > * {
   max-width: 1240px !important;
   margin-inline: auto;
 }
@@ -81,13 +81,14 @@ footer.entry-footer.default-max-width {
 .post-date-group {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .post-title {
   margin-left: 25px;
 }
 
-.entry-title a {
+.single .entry-title a {
   font-size: 16px;
   color: #22689d !important;
   border: solid 2px;
@@ -95,13 +96,13 @@ footer.entry-footer.default-max-width {
   border-radius: 30px;
 }
 
-.entry-title a:hover {
+.single .entry-title a:hover {
   color: #fff !important;
   background: #22689d;
   border-color: #22689d;
 }
 
-.entry-header p {
+.single .entry-header p {
   font-size: 20px;
 }
 
@@ -140,13 +141,14 @@ h3.partial-underline::after {
 .speakers-list {
   display: flex;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 .speaker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  max-width: 350px;
 }
 
 .speaker img {

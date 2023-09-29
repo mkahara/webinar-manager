@@ -177,3 +177,27 @@ function save_speakers_meta( $post_id ) {
 	}
 }
 add_action( 'save_post', 'save_speakers_meta' );
+
+// Add the 'webinar_category' column to the admin list view
+function add_webinar_category_column($columns) {
+	$columns['webinar_category'] = 'Webinar Category';
+	return $columns;
+}
+add_filter('manage_webinar_posts_columns', 'add_webinar_category_column');
+
+// Populate the 'webinar_category' column with the custom taxonomy terms
+function populate_webinar_category_column($column, $post_id) {
+	if ($column == 'webinar_category') {
+		$terms = get_the_terms($post_id, 'webinar_category');
+		if ($terms && !is_wp_error($terms)) {
+			$term_names = array();
+			foreach ($terms as $term) {
+				$term_names[] = $term->name;
+			}
+			echo implode(', ', $term_names);
+		} else {
+			echo 'No Category';
+		}
+	}
+}
+add_action('manage_webinar_posts_custom_column', 'populate_webinar_category_column', 10, 2);
