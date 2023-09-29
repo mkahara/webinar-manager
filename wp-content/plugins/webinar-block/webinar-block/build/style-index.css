@@ -17,7 +17,7 @@ body {
   padding: 2px;
 }
 
-.entry-content.wp-block-post-content div, .single .entry-content > * {
+.entry-content.wp-block-post-content div, .single .entry-content > *, .page .entry-content > * {
   max-width: 1240px !important;
   margin-inline: auto;
 }
@@ -94,6 +94,7 @@ footer.entry-footer.default-max-width {
   border: solid 2px;
   padding: 10px 20px;
   border-radius: 30px;
+  text-decoration: none;
 }
 
 .single .entry-title a:hover {
@@ -197,6 +198,25 @@ h3.partial-underline::after {
 
 .entry-header .post-thumbnail {
   margin-top: -40px;
+}
+
+.primary-button {
+  font-size: 16px;
+  text-decoration: none;
+  background: #287cbf;
+  color: #fff;
+  padding: 10px 50px;
+  border-radius: 30px;
+  border: solid 2px #287cbf;
+}
+
+.webinar-program {
+  margin-top: 50px;
+}
+
+.primary-button:hover {
+  background: #fff;
+  border: solid;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

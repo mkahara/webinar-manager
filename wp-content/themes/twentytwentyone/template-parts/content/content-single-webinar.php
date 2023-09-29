@@ -29,6 +29,8 @@ foreach ( $blocks as $block ) {
 		$endDate     = $attributes['endDate'] ?? 'Not available';
 		$duration    = $attributes['duration'] ?? 'Not available';
 		$description = $attributes['description'] ?? 'Not available';
+		$webinarUrl = $attributes['webinarUrl'] ?? 'Not available';
+		$regFormUrl = $attributes['regFormUrl'] ?? 'Not available';
 	}
 }
 
@@ -51,7 +53,7 @@ $formattedDateTime = $formattedTime . ', GMT' . $formattedTimezone;
                 </span>
                 <span class="post-title"><?php the_title(); ?></span>
             </div>
-            <span><a class="clear-link">Subscribe Newsletter</a></span>
+            <span><a href="<?php echo $regFormUrl ?>" target="_blank" class="clear-link">Register Now!</a></span>
         </h1>
         <p><?php echo $subtitle; ?></p>
         <div class="webinar-post-nav">
@@ -82,6 +84,7 @@ $formattedDateTime = $formattedTime . ', GMT' . $formattedTimezone;
             <div class="webinar-description" id="webinar-description">
                 <h3 class="partial-underline">Webinar Details</h3>
 				<?php echo $description ?>
+                <a class="primary-button" href="<?php echo $webinarUrl ?>" target="_blank">Streaming Channel</a>
             </div>
 
             <!-- Webinar Highlights-->
